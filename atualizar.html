@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>Editar Tarefa</h1>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_table }}
+    <div class="buttons-container">
+        <input class="btn" id="atualizar" type="submit" value="Salvar Alterações">
+        <a href="{% url 'lista' %}" class="btn">Cancelar</a>
+    </div>
+</form>
+{% endblock %}

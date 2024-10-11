@@ -1,0 +1,12 @@
+{% extends 'main.html' %}
+{% block content %}
+<h1>Deletar Tarefa</h1>
+<p>Tem certeza que deseja deletar a tarefa <strong>{{ object.nome_tarefa }}</strong>?</p>
+<form method="post">
+    {% csrf_token %}
+    <div class="buttons-container">
+        <button class="btn" id="deletar" type="submit">Deletar</button>
+        <a href="{% url 'atualizar' pk=object.pk %}" class="btn">Cancelar</a>
+    </div>
+</form>
+{% endblock %}
